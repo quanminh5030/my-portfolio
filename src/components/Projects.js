@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Contact() {
     const classes = useStyles();
     const [elements, setElements] = useState([
-        { githubLink: 'https://github.com/quanminh5030/Personal-Trainer.git', textInfo: 'A ReactJS application which show the data of the customers and their training sessions stored in the database', image: personaltrainer },
+        { githubLink: 'https://quanminh5030.github.io/Personal-Trainer', textInfo: 'A ReactJS application which show the data of the customers and their training sessions stored in the database', image: personaltrainer },
         { githubLink: 'https://github.com/quanminh5030/Vaalikone.git', textInfo: 'A Java application where users can answer questions and see how suitable they are with each candidates.', image: vaalikonePic },
         { githubLink: 'https://github.com/quanminh5030/-fud-hub.git', textInfo: 'An application created by using PHP where users can sign up and login to see the recipes for the most popular foods available in the website', image: fudhub },
     ])
