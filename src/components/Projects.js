@@ -1,4 +1,4 @@
-import { Button, CardMedia, Fade, Grid, Link, makeStyles, Tooltip, Typography, Zoom } from '@material-ui/core';
+import { CardMedia, Grid, Link, makeStyles, Tooltip, Typography, Zoom } from '@material-ui/core';
 import React, { useState } from 'react';
 import vaalikonePic from '../images/vaalikoneApp.PNG'
 import fudhub from '../images/fud-hub.PNG';

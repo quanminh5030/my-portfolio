@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { AppBar, Box, Container, Grid, LinearProgress, Tabs, Typography } from '@material-ui/core';
+import { Container, Grid, LinearProgress, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     title: {

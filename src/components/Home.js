@@ -1,4 +1,4 @@
-import { Box, Button, Container, Divider, Grid, Link, makeStyles, Typography } from '@material-ui/core';
+import { Box, Divider, Grid, Link, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Divider, Grid, LinearProgress, Typography } from '@material-ui/core';
+import {  Divider, Grid, Typography } from '@material-ui/core';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import Skills from './Skills';
 

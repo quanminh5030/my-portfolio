@@ -3,14 +3,13 @@ import React from 'react';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        color: 'white',
         margin: 30,
         color: '#878787',
         fontWeight: 'bold'
     }
 }))
 
-export default function() {
+export default function Footer() {
     const classes = useStyles();
     
     return (

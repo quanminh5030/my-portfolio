@@ -1,12 +1,11 @@
 import React, { useRef } from 'react';
 import Paper from '@material-ui/core/Paper';
-import { AppBar, Tab, Tabs, Typography } from '@material-ui/core';
+import { AppBar, Tab, Tabs } from '@material-ui/core';
 import About from './components/About';
 import Resume from './components/experience/Experience';
 import Projects from './components/Projects';
 import Home from './components/Home';
 import Footer from './components/Footer';
-
 
 function App() {
   const myHome = useRef(null);

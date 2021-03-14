@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Avatar, Grid, Tabs, Typography } from '@material-ui/core';
+import {  Avatar, Grid, Typography } from '@material-ui/core';
 import mypicture from '../images/myPicture.jpg'
 
 const useStyles = makeStyles(theme => ({
