@@ -1,12 +1,8 @@
 import { Button, CardMedia, Fade, Grid, Link, makeStyles, Tooltip, Typography, Zoom } from '@material-ui/core';
 import React, { useState } from 'react';
-import mypicture from '../images/myPicture.jpg'
 import vaalikonePic from '../images/vaalikoneApp.PNG'
 import fudhub from '../images/fud-hub.PNG';
 import personaltrainer from '../images/trainingApp.PNG';
-
-import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from "mdbreact";
-
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -30,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Contact() {
     const classes = useStyles();
     const [elements, setElements] = useState([
-        { githubLink: 'https://quanminh5030.github.io/Personal-Trainer', textInfo: 'A ReactJS application which show the data of the customers and their training sessions stored in the database', image: personaltrainer },
+        { githubLink: 'https://trainerapp-quand.herokuapp.com', textInfo: 'A ReactJS application which show the data of the customers and their training sessions stored in the database', image: personaltrainer },
         { githubLink: 'https://github.com/quanminh5030/Vaalikone.git', textInfo: 'A Java application where users can answer questions and see how suitable they are with each candidates.', image: vaalikonePic },
         { githubLink: 'https://github.com/quanminh5030/-fud-hub.git', textInfo: 'An application created by using PHP where users can sign up and login to see the recipes for the most popular foods available in the website', image: fudhub },
     ])
