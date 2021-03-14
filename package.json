@@ -1,8 +1,11 @@
 {
-  "homepage": "http://quanminh5030.github.io/my-portfolio",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.14.6",
+    "node": "12.18.3"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
@@ -19,8 +22,6 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
