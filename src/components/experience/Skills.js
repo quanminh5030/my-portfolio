@@ -1,47 +1,15 @@
 import React from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { Container, Grid, LinearProgress, Typography } from '@material-ui/core';
+import { Container, createMuiTheme, Grid, responsiveFontSizes, ThemeProvider, Typography } from '@material-ui/core';
+import { useStyles, BorderLinearProgress } from '../style/skillsStyle';
 
-const useStyles = makeStyles(theme => ({
-    title: {
-        // width: theme.spacing(20),
-        height: theme.spacing(5),
-        marginTop: 100,
-        marginRight: 200,
-        fontSize: 25,
-        borderBottomStyle: 'solid',
-        borderBottomColor: '#248591',
-        BorderBottomWidth: 5
-    },
-
-    heading: {
-        position: 'absolute',
-        marginTop: 100,
-        marginBottom: 20,
-    },
-}))
-
-const BorderLinearProgress = withStyles((theme) => ({
-    root: {
-        width: '100%',
-        height: 40,
-        borderRadius: 5,
-        backgroundColor: '#bbbdbf',
-        marginTop: 150
-    },
-
-    bar: {
-        borderRadius: 5,
-        backgroundColor: '#3b3939',
-    },
-}))(LinearProgress);
-
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 export default function Skills() {
     const classes = useStyles();
     const skills = [
         { name: 'HTML5 & CSS3', topMargin: 0, percent: 50 },
-        { name: 'JAVASCRIPT', topMargin: 100, percent: 65},
+        { name: 'JAVASCRIPT', topMargin: 100, percent: 65 },
         { name: 'REACTJS', topMargin: 200, percent: 60 },
         { name: 'MATERIAL-UI', topMargin: 300, percent: 65 },
         { name: 'JAVA', topMargin: 400, percent: 75 },
@@ -51,21 +19,24 @@ export default function Skills() {
     ];
 
     return (
-        <>
-            <Grid container item xs={5} justify='flex-end' style={{ marginBottom: 500 }}>
-                <Typography variant='h3' className={classes.title} style={{ marginRight: 250 }}>SKILLS</Typography>
+        <Grid container>
+            <Grid item md={1}></Grid>
+            <Grid container item md={4} justify='center'>
+                <ThemeProvider theme={theme}>
+                    <Typography variant='h4' className={classes.title}>SKILLS</Typography>
+                </ThemeProvider>
             </Grid>
 
-            <Grid container item xs={4} style={{marginBottom: 1150}}>
+            <Grid container justify='center' item md={6} style={{ marginBottom: 1150, marginLeft: 20 }}>
                 {skills.map((skill, index) => (
-                    <Container disableGutters style={{ position: 'absolute', marginTop: skill.topMargin, width: '33.5%' }}>
-                        <Typography
-
-                            className={classes.heading}
-                            variant='h6'
-                        >{skill.name}
-                        </Typography>
-
+                    <Container key={index} disableGutters style={{ position: 'absolute', marginTop: skill.topMargin, width: '50%' }}>
+                        <ThemeProvider theme={theme}>
+                            <Typography
+                                className={classes.heading}
+                                variant='h6'
+                            >{skill.name}
+                            </Typography>
+                        </ThemeProvider>
                         <BorderLinearProgress
                             variant='determinate'
                             value={skill.percent}
@@ -75,6 +46,6 @@ export default function Skills() {
             </Grid>
 
 
-        </>
+        </Grid>
     );
 }

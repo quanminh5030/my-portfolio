@@ -1,74 +1,49 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import {  Divider, Grid, Typography } from '@material-ui/core';
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import { Divider, Grid, Typography } from '@material-ui/core';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import Skills from './Skills';
+import useStyles from '../style/expStyle';
+import { ThemeProvider } from 'react-bootstrap';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-  },
-
-  title: {
-    // width: theme.spacing(20),
-    height: theme.spacing(5),
-    marginTop: 100,
-    marginRight: 200,
-    fontSize: 25,
-    borderBottomStyle: 'solid',
-    borderBottomColor: '#248591',
-    BorderBottomWidth: 5
-  },
-
-  heading: {
-    fontWeight: 'bold',
-    marginTop: 100,
-    marginBottom: 20,
-    color: 'black'
-  },
-
-  divider: {
-    color: 'red'
-  }
-}))
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 export default function Portfolio() {
   const classes = useStyles();
+  const mySchool = [
+    { name: 'Häme University of Applied Sciences', degree: 'Bachelor of Business Administration, Computer Applications', time: '09.2019 - 05.2020', description: ' After the first year, I got the excellent GPA 5.0. During this time, I have participated in many different projects, one of them as Project Manager.' },
+    { name: 'Haaga-Helia University of Applied Sciences', degree: 'Bachelor of Business Administration, Business Information Technology', time: '09.2020 - Currently', description: ' After transferring my study to Helsinki, I keep my GPA up to 4.78 out of 5.' }
+  ]
 
   return (
     <Grid container>
-      <Grid container item md={5} justify='flex-end'>
-        <Typography variant='h3' className={classes.title}>EDUCATION</Typography>
+      <Grid item md={1}></Grid>
+      <Grid container item md={4} justify='center'>
+        <ThemeProvider theme={theme}>
+          <Typography variant='h4' className={classes.title}>EDUCATION</Typography>
+        </ThemeProvider>
       </Grid>
 
-      <Grid item md={4} style={{ color: '#757474' }}>
-        <Typography variant='h5' className={classes.heading}>Häme University of Applied Sciences</Typography>
-        <Typography variant='h6'><i>Bachelor of Business Administration, Computer Applications</i></Typography>
-        <Typography variant='h6' >
-          <FiberManualRecordIcon style={{ fontSize: 10 }} /> 09.2019 - 05.2020
-        </Typography>
-
-        <Typography variant='subtitle1' style={{ marginTop: 10 }}>
-          After the first year, I got the excellent GPA 5.0. During this time, I have participated in 3 different projects, one of them as Project Manager.
-        </Typography>
+      <Grid container item md={5} className={classes.container}>
+        {mySchool.map((item, index) =>
+          <Grid container key={index}>
+            <ThemeProvider theme={theme}>
+              <Typography variant='h5' className={classes.heading}>{item.name}</Typography>
+              <Typography variant='h6'><i>{item.degree}</i></Typography>
+              <Typography variant='h6' >
+                <FiberManualRecordIcon style={{ fontSize: 10 }} /> {item.time}
+              </Typography>
+              <Typography variant='subtitle1' style={{ marginTop: 10 }}>
+                {item.description}
+              </Typography>
+            </ThemeProvider>
+          </Grid>
+        )}
       </Grid>
 
-      <Grid item md={5}></Grid>
-
-      <Grid item md={4} style={{ color: '#757474' }} direction>
-        <Typography variant='h5' className={classes.heading}>Haaga-Helia University of Applied Sciences</Typography>
-        <Typography variant='h6'><i>Bachelor of Business Administration, Business Information Technology</i></Typography>
-        <Typography variant='h6' >
-          <FiberManualRecordIcon style={{ fontSize: 10 }} /> 09.2020 - Currently
-        </Typography>
-
-        <Typography variant='subtitle1' style={{ marginTop: 10, marginBottom: 50 }}>
-          After transferring my study to Helsinki, I keep my GPA up to 4.78 out of 5.
-        </Typography>
-      </Grid>
-
-      <Grid item md='12' style={{ margin: 'auto' }}>
-        <Divider variant='middle' classes={{ root: classes.divider }} />
+      <Grid item md={12}>
+        <Divider variant='middle' />
       </Grid>
 
       <Skills />
