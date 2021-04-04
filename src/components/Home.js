@@ -30,7 +30,7 @@ export default function Home() {
                 </Typography>
             </Grid>
 
-            <Grid item md='6' style={{ margin: 'auto' }}>
+            <Grid item md={12} style={{ margin: 'auto' }}>
                 <Divider variant='middle' style={{ backgroundColor: '#494a4a' }} />
             </Grid>
 

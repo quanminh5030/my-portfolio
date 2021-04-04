@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Paper from '@material-ui/core/Paper';
 import { AppBar, Tab, Tabs } from '@material-ui/core';
 import About from './components/About';
@@ -13,23 +13,29 @@ function App() {
   const myExperience = useRef(null);
   const myProject = useRef(null);
 
+  const [value, setValue] = useState('home');
+
   const handleChange = (event, newValue) => {
     if (newValue === 'home') {
       myHome.current.scrollIntoView({ behavior: 'smooth' });
+      setValue('home');
     }
     else if (newValue === 'about') {
       myAbout.current.scrollIntoView({ behavior: 'smooth' });
+      setValue('about');
     } else if (newValue === 'experience') {
       myExperience.current.scrollIntoView({ behavior: 'smooth' });
+      setValue('experience');
     } else if (newValue === 'project') {
       myProject.current.scrollIntoView({ behavior: 'smooth' });
+      setValue('project');
     }
   }
 
   return (
     <Paper ref={myHome} style={styles.container}>
       <AppBar style={styles.header} position='sticky' >
-        <Tabs onChange={handleChange} centered='true' >
+        <Tabs value={value} onChange={handleChange} centered >
           <Tab style={styles.tab} value="home" label="Home" />
           <Tab style={styles.tab} value="about" label="About me" />
           <Tab style={styles.tab} value="experience" label="Experience" />
@@ -49,7 +55,7 @@ function App() {
         <Resume />
       </Paper>
 
-      <Paper ref={myProject} style={{ backgroundColor: '#c7c7c7'}}>
+      <Paper ref={myProject} style={{ backgroundColor: '#c7c7c7' }}>
         <Projects />
       </Paper>
 
